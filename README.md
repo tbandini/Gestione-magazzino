@@ -1,0 +1,1 @@
+# Tabella-con-tecnica-di-reload
