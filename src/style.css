@@ -126,6 +126,14 @@ footer {
     min-width: fit-content;
 }
 
+.radioSelect {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
 /* to hide arrows */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
