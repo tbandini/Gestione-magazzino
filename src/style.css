@@ -25,7 +25,7 @@ form {
 input {
     font-family: "Roboto Mono", monospace;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
     border-radius: 5px;
     border: 1px solid #2e2c3e;
     width: 100%;
@@ -98,6 +98,20 @@ select {
     background-color: aliceblue;
 }
 
+textarea {
+    font-family: "Roboto Mono", monospace;
+    box-sizing: border-box;
+    text-align: left;
+    border-radius: 5px;
+    border: 1px solid #2e2c3e;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    padding: 0px;
+    background-color: aliceblue;
+    resize: none;
+}
+
 /* imposta il footer in basso a destra */
 footer {
     position: absolute;
@@ -129,9 +143,22 @@ footer {
 .radioSelect {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.sendButton {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#attivo,
+#inattivo {
     width: fit-content;
+    margin: 0;
 }
 
 /* to hide arrows */

@@ -31,25 +31,25 @@ if($rs)
 		<h1>Gestione magazzino</h1>
 		<h2>inserimento-categorie</h2>
 	</header>
-	<form form method="POST" id="queryForm">
+	<form form method="POST" id="queryForm" action="index.php">
 		<label for="Codice">Codice:</label>
-		<input type="text" name="Codice" id="Codice">
+		<input type="text" name="Codice" id="Codice" required>
 
 		<label for="Nome">Nome:</label>
-		<input type="text" name="Nome" id="Nome">
+		<input type="text" name="Nome" id="Nome" required>
 
 		<label for="Descrizione">Descrizione:</label>
-		<input type="text" name="Descrizione" id="Descrizione">
+		<textarea name="Descrizione" id="Descrizione" required></textarea>
 
 		<label for="radioSelect">Attivo:</label>
-		<div name="radioSelect">
-			<input type="radio" name="attivo" id="Attivo" value="1">
-			<p for="Attivo">Si</p>
-			<input type="radio" name="attivo" id="nonAttivo" value="0">
-			<p for="nonAttivo">No</p>
+		<div name="radioSelect" class="radioSelect">
+			<input type="radio" name="attivo" id="attivo" value="1">
+			<p for="attivo">Si</p>
+			<input type="radio" name="attivo" id="inattivo" value="0">
+			<p for="inattivo">No</p>
+			
 		</div>
-
-		<button id="btn" type="submit">Invia</button>
+		<button class="sendButton" type="submit">Invia</button>
 	</form>
 </body>
 </html>
