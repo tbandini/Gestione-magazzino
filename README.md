@@ -1,1 +1,1 @@
-# Tabella-con-tecnica-di-reload
+# Gestione magazzino
