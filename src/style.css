@@ -12,6 +12,21 @@ body {
     zoom: 150%;
 }
 
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+code {
+    font-family: "Roboto Mono", monospace;
+    font-size: 14px;
+    color: aliceblue;
+    background-color: #2e2c3e;
+    padding: 2px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 form {
     background-color: #2e2c3e;
     border-radius: 10px;
@@ -70,12 +85,13 @@ button {
     font-family: "Roboto Mono", monospace;
     transition: all 0.2s ease-in-out;
     background-color: aliceblue;
-    color: black;
+    color: #2e2c3e;
     height: 25px;
     width: fit-content;
     border-radius: 6px;
     border: 2px solid #2e2c3e;
     cursor: pointer;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 button:hover {
@@ -147,9 +163,11 @@ footer {
     align-items: center;
     margin: 0 auto;
     width: 70%;
+    height: 25px;
+    padding-bottom: 5px;
 }
 
-.sendButton {
+.insertButton {
     text-align: center;
     width: 100%;
     margin: 0 auto;
@@ -159,6 +177,10 @@ footer {
 #inattivo {
     width: fit-content;
     margin: 0;
+}
+
+#response {
+    padding-top: 20px;
 }
 
 /* to hide arrows */
