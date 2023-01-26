@@ -8,6 +8,7 @@ include("fetch-data.php");
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Gestione magazzino</title>
+        <link rel="icon" href="./icons/icons8-warehouse-nawicon-outline-color-96.png" />
         <link rel="stylesheet" href="style.css" />
         <script src="index.js" defer></script>
     </head>
