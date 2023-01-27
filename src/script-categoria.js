@@ -15,8 +15,6 @@ $("#insertButton").click((e) => {
         return;
     }
 
-    console.log(stato);
-
     if (Codice == "" || Nome == "" || Descrizione == "") {
         alert("Compila tutti i campi");
         return;
@@ -25,7 +23,7 @@ $("#insertButton").click((e) => {
     // Stabilisco la connessione
     xhttp.open(
         "POST",
-        "/5ATL/bandi.t.160803/GestioneMagazzino/nuova-categoria.php",
+        "/5ATL/bandi.t.160803/GestioneMagazzino/query-categoria.php",
         true
     );
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -45,11 +43,9 @@ $("#insertButton").click((e) => {
     // Controllo lo stato della connessione e se positivo stampo il risultato nel index.html
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            // Divido la stringa in due parti
             response = xhttp.responseText;
-            console.log(response);
 
-            // Stampo il risultatoc
+            // Stampo il risultato
             $("#response").html(response);
         }
     };

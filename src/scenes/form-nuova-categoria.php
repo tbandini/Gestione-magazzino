@@ -9,22 +9,23 @@
             crossorigin="anonymous"
         ></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="script-nuova-categoria.js" defer="defer"></script>
+        <script src="../script-categoria.js" defer="defer"></script>
         <title>Gestione magazzino</title>
         <link
             rel="icon"
-            href="./icons/icons8-warehouse-nawicon-outline-color-96.png"
+            href="../icons/warehouse-icon.svg"
         />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="../style.css" />
     </head>
     <body>
         <header>
             <h1>
-                <a
-                    href="http://lezioni.alberghetti.it/5ATL/bandi.t.160803/GestioneMagazzino"
-                    >Gestione magazzino</a
-                >
+                <a href="http://lezioni.alberghetti.it/5ATL/bandi.t.160803/GestioneMagazzino">
+                    <img src="../icons/warehouse-icon.svg" alt="warehouse-icon" /> <br/>
+                    Gestione magazzino
+                </a>
             </h1>
+            <hr>
             <h2>inserimento-categorie</h2>
         </header>
         <form id="queryForm" method="POST">

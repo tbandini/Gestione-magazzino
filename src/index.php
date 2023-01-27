@@ -13,12 +13,19 @@ include("fetch-data.php");
         ></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Gestione magazzino</title>
-        <link rel="icon" href="./icons/icons8-warehouse-nawicon-outline-color-96.png" />
+        <link rel="icon" href="./icons/warehouse-icon.svg" />
         <link rel="stylesheet" href="style.css" />
+        <script src="script-modifica.js"></script>
     </head>
     <body>
         <header>
-            <h1>Gestione magazzino</h1>
+            <h1>
+                <a href="http://lezioni.alberghetti.it/5ATL/bandi.t.160803/GestioneMagazzino">
+                    <img src="./icons/warehouse-icon.svg" alt="warehouse-icon" /> <br/>
+                    Gestione magazzino
+                </a>
+            </h1>
+            <hr>
             <h2>categorie</h2>
         </header>
         <div class="container">
@@ -56,7 +63,7 @@ include("fetch-data.php");
             </tbody>
             </table>
             <div class="buttons">
-                <button id="btnInserisci" onclick="document.location.href='form-nuova-categoria.php'">inserisci</button>
+                <button id="btnInserisci" onclick="document.location.href='scenes/form-nuova-categoria.php'">inserisci</button>
                 <button id="btnModifica">modifica</button>
             </div>
         </div>
