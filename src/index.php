@@ -18,62 +18,64 @@ include("fetch-data.php");
         <script src="script-modifica.js"></script>
     </head>
     <body>
-        <header>
-            <h1>
-                <a href="http://lezioni.alberghetti.it/5ATL/bandi.t.160803/GestioneMagazzino">
-                    <img src="./icons/warehouse-icon.svg" alt="warehouse-icon" /> <br/>
-                    Gestione magazzino
-                </a>
-            </h1>
-            <hr>
-            <h2>categorie</h2>
-        </header>
-        <div class="container">
-        <? echo $deleteMsg??''; ?>
-            <table>
-                <thead>
-                    <th>ID</th>
-                    <th>codice</th>
-                    <th>nome</th>
-                    <th>descrizione</th>
-                    <th>attivo</th>
-                </thead>
-                <tbody>
-                <?
-                    if(is_array($fetchData)){      
-                    $sn=1;
-                    foreach($fetchData as $data){
-                ?>
-                <tr>
-                    <td><?php echo $data['ID']; ?></td>
-                    <td><?php echo $data['Codice']; ?></td>
-                    <td><?php echo $data['Nome']; ?></td>
-                    <td><?php echo $data['Descrizione']; ?></td>
-                    <td><?php if ($data['Attivo']) {echo "✅";} else {echo "❌";}?></td>
-                </tr>
-                <?
-                    $sn++;}}else{ ?>
-                <tr>
-                    <td colspan="8">
-                <? echo $fetchData; ?>
-                </td>
-                <tr>
-                <?
-                }?>
-            </tbody>
-            </table>
-            <div class="buttons">
-                <button id="btnInserisci" onclick="document.location.href='scenes/form-nuova-categoria.php'">inserisci</button>
-                <button id="btnModifica">modifica</button>
+        <div id="page-container">
+            <div id="content-wrap">
+                <header>
+                    <h1>
+                        <a href="http://lezioni.alberghetti.it/5ATL/bandi.t.160803/GestioneMagazzino">
+                            <img class="logo" src="./icons/warehouse-icon.svg" alt="warehouse-icon" /> <br/>
+                            Gestione magazzino
+                        </a>
+                    </h1>
+                    <hr>
+                    <h2>categorie</h2>
+                </header>
+                <? echo $deleteMsg??''; ?>
+                <table>
+                    <thead>
+                        <th>ID</th>
+                        <th>codice</th>
+                        <th>nome</th>
+                        <th>descrizione</th>
+                        <th>attivo</th>
+                    </thead>
+                        <tbody>
+                        <?
+                            if(is_array($fetchData)){      
+                            $sn=1;
+                            foreach($fetchData as $data){
+                        ?>
+                        <tr>
+                            <td><?php echo $data['ID']; ?></td>
+                            <td><?php echo $data['Codice']; ?></td>
+                            <td class="tdNome"><?php echo $data['Nome']; ?></td>
+                            <td><?php echo $data['Descrizione']; ?></td>
+                            <td><?php if ($data['Attivo']) {echo "✅";} else {echo "❌";}?></td>
+                        </tr>
+                        <?
+                            $sn++;}} else { ?>
+                        <tr>
+                            <td colspan="8">
+                                <? echo $fetchData; ?>
+                            </td>
+                        <tr>
+                        <?
+                        }?>
+                    </tbody>
+                </table>
+                <div class="buttons">
+                    <button id="btnInserisci" onclick="document.location.href='scenes/form-nuova-categoria.php'">inserisci</button>
+                    <button id="btnModifica" onclick="document.location.href='scenes/form-modifica-categorie.php'">modifica</button>
+                </div>
             </div>
+            <footer>
+                <p>
+                    2023 - Bandini Tommaso 5ATL ITIS F. Alberghetti
+                    <a href="https://github.com/tbandini"> <br/>
+                        <img id="github-icon" src="./icons/github-icon.svg" alt="github-icon" />
+                    </a>
+                </p>
+            </footer>
         </div>
-        <footer>
-            <p>
-                2023 - Bandini Tommaso 5ATL ITIS F. Alberghetti
-                <a href="https://github.com/tbandini"> 
-                    <code> < Github/> </code>
-                </a>
-            </p>
-        </footer>
     </body>
 </html>

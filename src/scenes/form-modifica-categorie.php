@@ -1,0 +1,97 @@
+<?php
+include("../fetch-data.php");
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.js"
+            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+            crossorigin="anonymous"
+        ></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../script-modifica.js" defer="defer"></script>
+        <title>Gestione magazzino</title>
+        <link rel="icon" href="../icons/warehouse-icon.svg" />
+        <link rel="stylesheet" href="../style.css" />
+    </head>
+    <body>
+        <div id="page-container">
+            <div id="content-wrap">
+                <header>
+                    <h1>
+                        <a href="http://lezioni.alberghetti.it/5ATL/bandi.t.160803/GestioneMagazzino">
+                            <img class="logo" src="../icons/warehouse-icon.svg" alt="warehouse-icon" /> <br/>
+                            Gestione magazzino
+                        </a>
+                    </h1>
+                    <hr>
+                    <h2>modifica-categorie</h2>
+                </header>
+            
+                <? echo $deleteMsg??''; ?>
+                <table>
+                    <thead>
+                        <th>ID</th>
+                        <th>codice</th>
+                        <th>nome</th>
+                        <th>descrizione</th>
+                        <th>attivo</th>
+                        <th>elimina</th>
+                    </thead>
+                    <tbody>
+                        <?
+                            if(is_array($fetchData)){      
+                            $sn=1;
+                            foreach($fetchData as $data){
+                        ?>
+                        <!-- ogni td deve essere un input che ha come valore predefinito il php di $data che può essere modificato mentre quello con Attivo deve diventare una select con entrambi le opzioni ma predefiita quella che ese da php mentre la descrizione rimane una text area con gia presente il valore dato dal fetch data-->
+                        <tr>
+                            <td>
+                                <?php echo $data['ID']; ?>
+                            </td>
+                            <td>
+                                <input type="text" name="Codice[]" value="<?php echo $data['Codice']; ?>"/>    
+                            </td>
+                            <td>
+                                <input type="text" name="Nome[]" value="<?php echo $data['Nome']; ?>"/>
+                            </td>
+                            <td>
+                                <textarea name="Descrizione[]"><?php echo $data['Descrizione']; ?></textarea>
+                            </td>
+                            <td>
+                                <select name="Attivo[]">
+                                    <option value="1" <?php if($data['Attivo']==1){echo "selected";}?>>Attivo</option>
+                                    <option value="0" <?php if($data['Attivo']==0){echo "selected";}?>>Non attivo</option>
+                                </select>
+                            </td>
+                            <td> 
+                                <!-- Checkbox che permette la cancellazione della riga con un successivo tasto di conferma sotto la tabella "salva modifiche" -->
+                                <input type="checkbox" name="delete[]" value="<?php echo $data['ID']; ?>" />
+                            </td>
+                        </tr>
+                        <? $sn++;}} else { ?>
+                        <tr>
+                            <td colspan="8">
+                                <? echo $fetchData; ?>
+                            </td>
+                        <tr>
+                        <?
+                        }?>
+                    </tbody>
+                </table>
+                <button id="btnSave">Salva modifiche</button>
+            </div>
+            <footer>
+                <p>
+                    2023 - Bandini Tommaso 5ATL ITIS F. Alberghetti
+                    <a href="https://github.com/tbandini"> <br/>
+                        <img id="github-icon" src="../icons/github-icon.svg" alt="github-icon" />
+                    </a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

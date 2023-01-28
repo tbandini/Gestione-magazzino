@@ -1,3 +1,7 @@
+// $(document).ready(() => {
+//     $("tr:even").css("background-color", "#000000");
+// });
+
 $("#insertButton").click((e) => {
     e.preventDefault();
     var xhttp = new XMLHttpRequest();
