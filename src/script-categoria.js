@@ -1,7 +1,3 @@
-// $(document).ready(() => {
-//     $("tr:even").css("background-color", "#000000");
-// });
-
 $("#insertButton").click((e) => {
     e.preventDefault();
     var xhttp = new XMLHttpRequest();
@@ -49,8 +45,14 @@ $("#insertButton").click((e) => {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             response = xhttp.responseText;
 
-            // Stampo il risultato
-            $("#response").html(response);
+            if (response == 1) {
+                alert("Categoria inserita con successo!");
+                window.location.href = "/5ATL/bandi.t.160803/GestioneMagazzino";
+            }
+
+            if (response == 0) {
+                alert("Errore nell'inserimento della categoria");
+            }
         }
     };
 });

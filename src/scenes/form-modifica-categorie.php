@@ -47,7 +47,6 @@ include("../fetch-data.php");
                             $sn=1;
                             foreach($fetchData as $data){
                         ?>
-                        <!-- ogni td deve essere un input che ha come valore predefinito il php di $data che può essere modificato mentre quello con Attivo deve diventare una select con entrambi le opzioni ma predefiita quella che ese da php mentre la descrizione rimane una text area con gia presente il valore dato dal fetch data-->
                         <tr>
                             <td>
                                 <?php echo $data['ID']; ?>
@@ -68,7 +67,6 @@ include("../fetch-data.php");
                                 </select>
                             </td>
                             <td> 
-                                <!-- Checkbox che permette la cancellazione della riga con un successivo tasto di conferma sotto la tabella "salva modifiche" -->
                                 <input type="checkbox" name="delete[]" value="<?php echo $data['ID']; ?>" />
                             </td>
                         </tr>
