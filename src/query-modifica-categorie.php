@@ -1,43 +1,48 @@
 <?php
-header('Access-Control-Allow-Origin: *');
 include 'connection.php';
+header('Access-Control-Allow-Origin: *');
+
+$id = $_POST['id'];
+$ids = explode(',', $id);
+
+$codici = $_POST['codici'];
+$arrayCodici = explode(',', $codici);
+
+$nomi = $_POST['nomi'];
+$arrayNomi = explode(',', $nomi);
+
+$descrizioni = $_POST['descrizioni'];
+$arrayDescrizioni = explode(',', $descrizioni);
+
+$stati = $_POST['stati'];
+$arrayStati = explode(',', $stati);
 
 $stringChecked = $_POST['checked'];
 $arrayChecked = explode(',', $stringChecked);
 
-$Codice = $_POST['Codice'];
-$Nome = $_POST['Nome'];
-$Descrizione = $_POST['Descrizione'];
-$Attivo = $_POST['Attivo'];
-
-// Query per eliminare le categorie selezionate
-foreach($arrayChecked as $id) 
-{   
-    $query = "DELETE FROM `Categorie` WHERE `ID` = '$id'";
-    $rs = mysqli_query($con, $query);
+// Query per modificare le categorie
+for($i = 0; $i < count($arrayCodici); $i++) {
+    $query = "UPDATE `Categorie` SET `Codice` = '$arrayCodici[$i]', `Nome` = '$arrayNomi[$i]', `Descrizione` = '$arrayDescrizioni[$i]', `Attivo` = '$arrayStati[$i]' WHERE `ID` = '$ids[$i]'";
+    $queryModifiche = mysqli_query($con, $query);
 }
 
-if ($rs) {
+if($queryModifiche) {
     echo 1;
 } else {
     echo 0;
 }
 
-// Query per modificare le categorie
+echo " || ";
 
-
-for($i=0; $i<count($Codice); $i++)
-{
-    $query = "UPDATE `Categorie` SET `Codice` = '$Codice[$i]', `Nome` = '$Nome[$i]', `Descrizione` = '$Descrizione[$i]', `Attivo` = '$Attivo[$i]' WHERE `ID` = '$i'";
-    $rs = mysqli_query($con, $query);
+// Query per eliminare le categorie selezionate
+foreach($arrayChecked as $id) {   
+    $query = "DELETE FROM `Categorie` WHERE `ID` = '$id'";
+    $queryEliminazione = mysqli_query($con, $query);
 }
 
-if($rs)
-{
-    echo "Modifiche salvate con successo<br>clicca qui per tornare alla pagina principale";
-}
-else
-{
-    echo "Errore durante il salvataggio delle modifiche";
+if ($queryEliminazione) {
+    echo 1;
+} else {
+    echo 0;
 }
 ?>
