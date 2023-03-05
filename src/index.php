@@ -11,11 +11,17 @@ include("fetch-data.php");
             integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
             crossorigin="anonymous"
         ></script>
+        <script 
+            src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" 
+            integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" 
+            crossorigin="anonymous"
+        ></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Gestione magazzino</title>
         <link rel="icon" href="./icons/warehouse-icon.svg" />
         <link rel="stylesheet" href="style.css" />
         <script src="script-modifica.js"></script>
+        <script src="script-searchbar.js"></script>
     </head>
     <body>
         <div id="page-container">
@@ -31,6 +37,21 @@ include("fetch-data.php");
                     <h2>categorie</h2>
                 </header>
                 <? echo $deleteMsg??''; ?>
+
+                <topbar>
+                    <div class="searchbar"> 
+                        <input type="text" id="searchInput" placeholder="Cerca..." />
+                    </div>
+                    <div class="buttons">
+                        <button id="btnInserisci" onclick="document.location.href='scenes/form-nuova-categoria.php'">
+                            <img class="add-icon" src="./icons/add-icon.svg" alt="add-icon" />
+                        </button>
+                        <button id="btnModifica" onclick="document.location.href='scenes/form-modifica-categorie.php'">
+                            <img class="edit-icon" src="./icons/edit-icon.svg" alt="edit-icon" />
+                        </button>
+                    </div>
+                </topbar>
+
                 <table>
                     <thead>
                         <th>ID</th>
@@ -63,10 +84,6 @@ include("fetch-data.php");
                         }?>
                     </tbody>
                 </table>
-                <div class="buttons">
-                    <button id="btnInserisci" onclick="document.location.href='scenes/form-nuova-categoria.php'">inserisci</button>
-                    <button id="btnModifica" onclick="document.location.href='scenes/form-modifica-categorie.php'">modifica</button>
-                </div>
             </div>
             <footer>
                 <p>

@@ -16,6 +16,7 @@ include("../fetch-data.php");
         <title>Gestione magazzino</title>
         <link rel="icon" href="../icons/warehouse-icon.svg" />
         <link rel="stylesheet" href="../style.css" />
+        <script src="../script-searchbar.js"></script>
     </head>
     <body>
         <div id="page-container">
@@ -30,8 +31,18 @@ include("../fetch-data.php");
                     <hr>
                     <h2>modifica-categorie</h2>
                 </header>
-            
-                <? echo $deleteMsg??''; ?>
+
+                <topbar>
+                    <div class="searchbar"> 
+                        <input type="text" id="searchInput" placeholder="Cerca..." />
+                    </div>
+                    <div class="buttons">
+                        <button id="btnSave">
+                            <img class="save-icon" src="../icons/save-icon.svg" alt="save-icon" />
+                        </button>
+                    </div>
+                </topbar>
+
                 <table>
                     <thead>
                         <th>ID</th>
@@ -80,7 +91,6 @@ include("../fetch-data.php");
                         }?>
                     </tbody>
                 </table>
-                <button id="btnSave">Salva modifiche</button>
             </div>
             <footer>
                 <p>

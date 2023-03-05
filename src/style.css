@@ -15,6 +15,30 @@ body {
     min-height: 100%;
 }
 
+topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 100px;
+    align-items: center;
+    margin-bottom: 10px;
+    min-height: 30px;
+}
+
+.searchbar {
+    height: 25px;
+    width: 20%;
+    min-width: 100px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#searchInput {
+    position: relative;
+}
+
 .logo {
     width: 35px;
     height: 35px;
@@ -22,6 +46,78 @@ body {
     border: 2px solid aliceblue;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: all 0.2s ease-in-out;
+}
+
+#btnSave {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+#btnInserisci {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+#btnModifica {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.save-icon {
+    width: 20px;
+    height: 20px;
+    transition: all 0.2s linear;
+    -webkit-filter: invert(0%);
+    filter: invert(0%);
+}
+
+#btnSave:hover .save-icon {
+    transition: all 0.2s linear;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+.add-icon {
+    width: 20px;
+    height: 20px;
+    transition: all 0.2s linear;
+    -webkit-filter: invert(0%);
+    filter: invert(0%);
+}
+
+#btnInserisci:hover .add-icon {
+    transition: all 0.2s linear;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+.edit-icon {
+    width: 20px;
+    height: 20px;
+    transition: all 0.2s linear;
+    -webkit-filter: invert(0%);
+    filter: invert(0%);
+}
+
+#btnModifica:hover .edit-icon {
+    transition: all 0.2s linear;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
 }
 
 .logo:hover {
@@ -41,16 +137,6 @@ a {
     cursor: pointer;
 }
 
-code {
-    font-family: "Roboto Mono", monospace;
-    font-size: 14px;
-    color: aliceblue;
-    background-color: #2e2c3e;
-    padding: 2px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
 form {
     background-color: #2e2c3e;
     border-radius: 10px;
@@ -64,11 +150,11 @@ form {
 input {
     font-family: "Roboto Mono", monospace;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
     border-radius: 5px;
     border: 1px solid #2e2c3e;
+    height: 100%;
     width: 100%;
-    padding: 0px;
     background-color: aliceblue;
 }
 
@@ -142,7 +228,7 @@ button {
     font-weight: bold;
     background-color: aliceblue;
     color: #2e2c3e;
-    height: 25px;
+    height: fit-content;
     width: fit-content;
     border-radius: 6px;
     border: 2px solid #2e2c3e;
@@ -204,8 +290,8 @@ footer {
 #content-wrap {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     margin: 0 auto;
     width: 80%;
     padding-top: 2rem;
@@ -215,11 +301,11 @@ footer {
 
 .buttons {
     display: flex;
-    margin-top: 15px;
     text-align: center;
-    justify-content: space-between;
-    width: 25%;
+    justify-content: right;
+    align-items: center;
     min-width: fit-content;
+    height: 100%;
 }
 
 .radioSelect {
@@ -236,7 +322,6 @@ footer {
 .insertButton {
     text-align: center;
     width: 100%;
-    margin: 0 auto;
 }
 
 #btnSave {
