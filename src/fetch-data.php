@@ -34,4 +34,3 @@ function fetch_data($db, $tableName, $columns){
     }
     return $msg;
 }
-?>

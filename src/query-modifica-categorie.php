@@ -45,4 +45,3 @@ if ($queryEliminazione) {
 } else {
     echo 0;
 }
-?>
