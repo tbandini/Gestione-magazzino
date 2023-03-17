@@ -43,6 +43,7 @@ include("../fetch-data.php");
 
             <table>
                 <thead>
+                    <th>ID</th>
                     <th>codice</th>
                     <th>nome</th>
                     <th>descrizione</th>
@@ -56,6 +57,9 @@ include("../fetch-data.php");
                         foreach ($fetchData as $data) {
                     ?>
                             <tr>
+                                <td>
+                                    <p class="id"><?php echo $data['ID']; ?></p>
+                                </td>
                                 <td>
                                     <input type="text" class="codice" value="<?php echo $data['Codice']; ?>" />
                                 </td>

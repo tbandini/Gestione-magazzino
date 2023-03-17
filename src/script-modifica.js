@@ -111,7 +111,7 @@ $("#btnSave").click(() => {
                 checked
         );
 
-        // Controllo lo stato della connessione e se positivo stampo il risultato
+        // Controllo se le query sono state eseguite correttamente e se positivo stampo il risultato
         xhttp.onreadystatechange = () => {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
                 response = xhttp.responseText;

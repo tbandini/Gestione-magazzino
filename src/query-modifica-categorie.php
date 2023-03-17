@@ -21,12 +21,12 @@ $stringChecked = $_POST['checked'];
 $arrayChecked = explode(',', $stringChecked);
 
 // Query per modificare le categorie
-for($i = 0; $i < count($arrayCodici); $i++) {
+for ($i = 0; $i < count($arrayCodici); $i++) {
     $query = "UPDATE `Categorie` SET `Codice` = '$arrayCodici[$i]', `Nome` = '$arrayNomi[$i]', `Descrizione` = '$arrayDescrizioni[$i]', `Attivo` = '$arrayStati[$i]' WHERE `ID` = '$ids[$i]'";
     $queryModifiche = mysqli_query($con, $query);
 }
 
-if($queryModifiche) {
+if ($queryModifiche) {
     echo 1;
 } else {
     echo 0;
@@ -35,7 +35,7 @@ if($queryModifiche) {
 echo " || ";
 
 // Query per eliminare le categorie selezionate
-foreach($arrayChecked as $id) {   
+foreach ($arrayChecked as $id) {
     $query = "DELETE FROM `Categorie` WHERE `ID` = '$id'";
     $queryEliminazione = mysqli_query($con, $query);
 }
@@ -45,3 +45,4 @@ if ($queryEliminazione) {
 } else {
     echo 0;
 }
+?>

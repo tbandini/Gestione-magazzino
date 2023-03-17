@@ -48,6 +48,7 @@ include("fetch-data.php");
 
             <table>
                 <thead>
+                    <th>ID</th>
                     <th>codice</th>
                     <th>nome</th>
                     <th>descrizione</th>
@@ -60,6 +61,7 @@ include("fetch-data.php");
                         foreach ($fetchData as $data) {
                     ?>
                             <tr>
+                                <td><?php echo $data['ID']; ?></td>
                                 <td><?php echo $data['Codice']; ?></td>
                                 <td class="tdNome"><?php echo $data['Nome']; ?></td>
                                 <td><?php echo $data['Descrizione']; ?></td>
