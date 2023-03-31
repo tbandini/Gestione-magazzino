@@ -1,6 +1,7 @@
 <?php
+include '../scripts/connection.php';
+
 header('Access-Control-Allow-Origin: *');
-include 'connection.php';
 
 $Codice = $_POST['Codice'];
 $Nome = $_POST['Nome'];
@@ -17,4 +18,3 @@ if ($rs) {
 } else {
 	echo 0;
 }
-?>	

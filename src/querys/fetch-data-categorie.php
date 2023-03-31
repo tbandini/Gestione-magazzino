@@ -1,5 +1,7 @@
 <?php
-include 'connection.php';
+include '../scripts/connection.php';
+
+header('Access-Control-Allow-Origin: *');
 
 $db = $con;
 $tableName = "Categorie";
@@ -29,4 +31,3 @@ function fetch_data($db, $tableName, $columns)
     }
     return $msg;
 }
-?>

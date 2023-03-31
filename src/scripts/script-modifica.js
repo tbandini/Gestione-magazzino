@@ -16,11 +16,6 @@ $(document).ready(() => {
     $("textarea[class=descrizione]").each(function () {
         descrizioniPre.push($(this).val());
     });
-
-    // printo ogni array per vedere cosa contiene
-    console.log(codiciPre);
-    console.log(nomiPre);
-    console.log(descrizioniPre);
 });
 
 $("#btnSave").click(() => {
@@ -41,8 +36,6 @@ $("#btnSave").click(() => {
     $("p[class=id]").each(function () {
         id.push($(this).text());
     });
-
-    console.log(id);
 
     // Variabile per controllo modifiche
     let modificati = 0;
@@ -86,7 +79,7 @@ $("#btnSave").click(() => {
         // Stabilisco la connessione
         xhttp.open(
             "POST",
-            "/5ATL/bandi.t.160803/GestioneMagazzino/query-modifica-categorie.php",
+            "/5ATL/bandi.t.160803/GestioneMagazzino/querys/query-modifica-categorie.php",
             true
         );
 
@@ -119,7 +112,7 @@ $("#btnSave").click(() => {
                 if (responseArray[0] == 1 && responseArray[1] == 1) {
                     alert("Categorie modificate con successo!");
                     window.location.href =
-                        "/5ATL/bandi.t.160803/GestioneMagazzino";
+                        "/5ATL/bandi.t.160803/GestioneMagazzino/scenes/tabella_categorie.php";
                 }
 
                 if (responseArray[0] == 0 && responseArray[1] == 1) {
@@ -135,8 +128,6 @@ $("#btnSave").click(() => {
                         "Errore nella cancellazione e modifica delle categorie"
                     );
                 }
-
-                console.log(response);
             }
         };
     } else {

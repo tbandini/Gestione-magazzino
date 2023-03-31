@@ -1,5 +1,6 @@
 <?php
-include 'connection.php';
+include '../scripts/connection.php';
+
 header('Access-Control-Allow-Origin: *');
 
 $id = $_POST['id'];
@@ -45,4 +46,3 @@ if ($queryEliminazione) {
 } else {
     echo 0;
 }
-?>

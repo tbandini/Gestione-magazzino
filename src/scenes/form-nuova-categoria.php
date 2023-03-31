@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="../script-categoria.js" defer="defer"></script>
+    <script src="../scripts/script-categoria.js" defer="defer"></script>
     <title>Gestione magazzino</title>
     <link rel="icon" href="../icons/warehouse-icon.svg" />
     <link rel="stylesheet" href="../style.css" />
@@ -23,7 +23,8 @@
                     </a>
                 </h1>
                 <hr>
-                <h2>inserimento-categoria</h2>
+                <h2> <a href="http://lezioni.alberghetti.it/5ATL/bandi.t.160803/GestioneMagazzino/scenes/tabella_categorie.php">
+                        categorie</a>/inserimento</h2>
             </header>
             <form id="queryForm" method="POST">
                 <label for="Codice">Codice:</label>

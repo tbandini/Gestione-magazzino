@@ -1,5 +1,5 @@
 <?php
-include("../querys/fetch-data-categorie.php");
+include("../querys/fetch-data-ubicazioni.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +9,11 @@ include("../querys/fetch-data-categorie.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="../scripts/script-modifica.js" defer="defer"></script>
     <title>Gestione magazzino</title>
     <link rel="icon" href="../icons/warehouse-icon.svg" />
     <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../ubicazioniStyle.css" />
+    <script src="../scripts/script-modifica.js"></script>
     <script src="../scripts/script-searchbar.js"></script>
 </head>
 
@@ -27,17 +28,20 @@ include("../querys/fetch-data-categorie.php");
                     </a>
                 </h1>
                 <hr>
-                <h2> <a href="http://lezioni.alberghetti.it/5ATL/bandi.t.160803/GestioneMagazzino/scenes/tabella_categorie.php">
-                        categorie</a>/modifica</h2>
+                <h2>ubicazioni</h2>
             </header>
+            <? echo $deleteMsg ?? ''; ?>
 
             <topbar>
                 <div class="searchbar">
                     <input type="text" id="searchInput" placeholder="Cerca..." />
                 </div>
                 <div class="buttons">
-                    <button id="btnSave">
-                        <img class="save-icon" src="../icons/save-icon.svg" alt="save-icon" />
+                    <button id="btnInserisci">
+                        <img class="add-icon" src="../icons/add-icon.svg" alt="add-icon" />
+                    </button>
+                    <button id="btnModifica">
+                        <img class="edit-icon" src="../icons/edit-icon.svg" alt="edit-icon" />
                     </button>
                 </div>
             </topbar>
@@ -45,11 +49,7 @@ include("../querys/fetch-data-categorie.php");
             <table>
                 <thead>
                     <th>ID</th>
-                    <th>codice</th>
                     <th>nome</th>
-                    <th>descrizione</th>
-                    <th>attivo</th>
-                    <th>elimina</th>
                 </thead>
                 <tbody>
                     <?
@@ -58,33 +58,11 @@ include("../querys/fetch-data-categorie.php");
                         foreach ($fetchData as $data) {
                     ?>
                             <tr>
-                                <td>
-                                    <p class="id"><?php echo $data['ID']; ?></p>
-                                </td>
-                                <td>
-                                    <input type="text" class="codice" value="<?php echo $data['Codice']; ?>" />
-                                </td>
-                                <td>
-                                    <input type="text" class="nome" value="<?php echo $data['Nome']; ?>" />
-                                </td>
-                                <td>
-                                    <textarea class="descrizione"><?php echo $data['Descrizione']; ?></textarea>
-                                </td>
-                                <td>
-                                    <select class="attivo" name="Attivo[]">
-                                        <option value="1" <?php if ($data['Attivo'] == 1) {
-                                                                echo "selected";
-                                                            } ?>>Attivo</option>
-                                        <option value="0" <?php if ($data['Attivo'] == 0) {
-                                                                echo "selected";
-                                                            } ?>>Non attivo</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <input type="checkbox" name="delete[]" value="<?php echo $data['ID']; ?>" />
-                                </td>
+                                <td><?php echo $data['ID']; ?></td>
+                                <td><?php echo $data['Magazzino']; ?></td>
                             </tr>
-                        <? $sn++;
+                        <?
+                            $sn++;
                         }
                     } else { ?>
                         <tr>

@@ -23,7 +23,7 @@ $("#insertButton").click((e) => {
     // Stabilisco la connessione
     xhttp.open(
         "POST",
-        "/5ATL/bandi.t.160803/GestioneMagazzino/query-categoria.php",
+        "/5ATL/bandi.t.160803/GestioneMagazzino/querys/query-categoria.php",
         true
     );
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -47,7 +47,8 @@ $("#insertButton").click((e) => {
 
             if (response == 1) {
                 alert("Categoria inserita con successo!");
-                window.location.href = "/5ATL/bandi.t.160803/GestioneMagazzino";
+                window.location.href =
+                    "/5ATL/bandi.t.160803/GestioneMagazzino/scenes/tabella_categorie.php";
             }
 
             if (response == 0) {
