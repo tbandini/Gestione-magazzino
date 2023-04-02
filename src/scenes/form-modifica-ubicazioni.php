@@ -1,5 +1,5 @@
 <?php
-include("../querys/fetch-data-categorie.php");
+include("../querys/fetch-data-ubicazioni.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,12 +7,12 @@ include("../querys/fetch-data-categorie.php");
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../scripts/script-modifica-ubicazioni.js" defer="defer"></script>
     <title>Gestione magazzino</title>
     <link rel="icon" href="../icons/warehouse-icon.svg" />
     <link rel="stylesheet" href="../style.css" />
-    <script src="../scripts/script-modifica-categorie.js"></script>
     <script src="../scripts/script-searchbar.js"></script>
 </head>
 
@@ -27,33 +27,25 @@ include("../querys/fetch-data-categorie.php");
                     </a>
                 </h1>
                 <hr>
-                <h2>categorie</h2>
+                <h2> <a href="http://lezioni.alberghetti.it/5ATL/bandi.t.160803/GestioneMagazzino/scenes/tabella_ubicazioni.php">
+                        ubicazioni</a>/modifica</h2>
             </header>
-            <? echo $deleteMsg ?? ''; ?>
 
             <topbar>
                 <div class="searchbar">
                     <input type="text" id="searchInput" placeholder="Cerca..." />
                 </div>
                 <div class="buttons">
-                    <button id="btnInserisci" onclick="document.location.href='./form-nuova-categoria.php'">
-                        <img class="add-icon" src="../icons/add-icon.svg" alt="add-icon" />
-                    </button>
-                    <button id="btnModifica" onclick="document.location.href='./form-modifica-categorie.php'">
-                        <img class="edit-icon" src="../icons/edit-icon.svg" alt="edit-icon" />
+                    <button id="btnSave">
+                        <img class="save-icon" src="../icons/save-icon.svg" alt="save-icon" />
                     </button>
                 </div>
             </topbar>
 
             <table>
                 <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>codice</th>
-                        <th>nome</th>
-                        <th>descrizione</th>
-                        <th>attivo</th>
-                    </tr>
+                    <th>ID</th>
+                    <th>nome</th>
                 </thead>
                 <tbody>
                     <?
@@ -62,15 +54,15 @@ include("../querys/fetch-data-categorie.php");
                         foreach ($fetchData as $data) {
                     ?>
                             <tr>
-                                <td><?php echo $data['ID']; ?></td>
-                                <td><?php echo $data['Codice']; ?></td>
-                                <td><?php echo $data['Nome']; ?></td>
-                                <td><?php echo $data['Descrizione']; ?></td>
-                                <td><?php if ($data['Attivo']) {
-                                        echo "✅";
-                                    } else {
-                                        echo "❌";
-                                    } ?></td>
+                                <td>
+                                    <p class="id"><?php echo $data['ID']; ?></p>
+                                </td>
+                                <td>
+                                    <input type="text" class="magazzino" value="<?php echo $data['Magazzino']; ?>" />
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="delete[]" value="<?php echo $data['ID']; ?>" />
+                                </td>
                             </tr>
                         <?
                             $sn++;

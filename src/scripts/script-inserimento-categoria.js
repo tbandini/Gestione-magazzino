@@ -23,7 +23,7 @@ $("#insertButton").click((e) => {
     // Stabilisco la connessione
     xhttp.open(
         "POST",
-        "/5ATL/bandi.t.160803/GestioneMagazzino/querys/query-categoria.php",
+        "/5ATL/bandi.t.160803/GestioneMagazzino/querys/query-inserimento-categoria.php",
         true
     );
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

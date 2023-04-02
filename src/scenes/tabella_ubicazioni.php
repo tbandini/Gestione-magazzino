@@ -13,7 +13,7 @@ include("../querys/fetch-data-ubicazioni.php");
     <link rel="icon" href="../icons/warehouse-icon.svg" />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../ubicazioniStyle.css" />
-    <script src="../scripts/script-modifica.js"></script>
+    <script src="../scripts/script-modifica-ubicazioni.js"></script>
     <script src="../scripts/script-searchbar.js"></script>
 </head>
 
@@ -37,10 +37,10 @@ include("../querys/fetch-data-ubicazioni.php");
                     <input type="text" id="searchInput" placeholder="Cerca..." />
                 </div>
                 <div class="buttons">
-                    <button id="btnInserisci">
+                    <button id="btnInserisci" onclick="document.location.href='./form-nuova-ubicazione.php'">
                         <img class="add-icon" src="../icons/add-icon.svg" alt="add-icon" />
                     </button>
-                    <button id="btnModifica">
+                    <button id="btnModifica" onclick="document.location.href='./form-modifica-ubicazioni.php'">
                         <img class="edit-icon" src="../icons/edit-icon.svg" alt="edit-icon" />
                     </button>
                 </div>
